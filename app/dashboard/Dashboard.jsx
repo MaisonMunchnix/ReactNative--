@@ -39,21 +39,26 @@ export default function Dashboard() {
 										<Text style={styles.date}>Today, Sept 4</Text>
 									</View>
 
-									<Text style={styles.textOverlay}>
+									<Text style={[styles.textOverlay, {color:'white'}]}>
 										<Text>Hi,</Text>
                      
-                    <Text style={{fontWeight:'500'}}> Nicole</Text>
-                    {"\n"}
-                    <Text style={{fontSize:15}}>This is your total hours as of today.</Text>
+                    <Text style={{fontFamily: "Poppins-SemiBold"}}> Nicole</Text>
+                    {/* {"\n"}
+                    <Text style={{fontSize:15}}>This is your total hours as of today.</Text> */}
 
                 	</Text>
 
 									<View style={styles.dashbox}>
 
+										<View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingBottom:10, borderBottomColor:'#d3d3d3ff', borderBottomWidth:1}}>
+											<Text style={{fontSize:15, color:'black', fontFamily: 'Poppins-Regular'}}>8:15 AM</Text>
+											<Text style={{fontSize:15, color:'black', fontWeight:'600', fontFamily: 'Poppins-SemiBold'}}>Not logged in yet</Text>
+										</View>
+
 										<View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', padding:10}}>
 											<View style={{flexDirection:'column'}}>
-												<Text style={styles.hours}>76 
-													<Text style={{fontSize:15}}>hours</Text> 
+												<Text style={styles.hours}>16 
+													<Text style={{fontSize:15}}> hours</Text> 
 												</Text>
 												<Text style={styles.month}>September 2025</Text>
 											</View>
@@ -61,6 +66,7 @@ export default function Dashboard() {
 											<View style={{flexDirection:'column'}}>
 												<View style={{flexDirection:'row', alignItems:'left', gap:10}}>
 													
+													<Ionicons name="checkmark-done" color="#09ab00ff" size={30} />
 													<Ionicons name="checkmark-done" color="#4b3d43ff" size={30} />
 													<Ionicons name="checkmark-done" color="#4b3d43ff" size={30} />
 													<Ionicons name="checkmark-done" color="#4b3d43ff" size={30} />
@@ -70,6 +76,19 @@ export default function Dashboard() {
 										</View>
 										
 									</View>
+
+									<View style={styles.dashbox}>
+										<View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+											<View style={{flexDirection:'row', gap:10, alignContent :'center', alignItems:'center'}}>
+												<MaterialIcons name="circle" size={15} color="red" />
+												<Text style={{color: 'black', fontFamily: 'Poppins-Regular', fontSize:15}}>This Week:</Text>
+											</View>
+											<Text style={{color: 'red', fontFamily: 'Poppins-SemiBold', fontWeight:'500', fontSize:15}}>16/20 HOURS</Text>
+										</View>
+									</View>
+
+									
+
 
 								</View>
 
@@ -89,6 +108,7 @@ const styles = StyleSheet.create({
         marginLeft: 0, 
         marginRight: 0,
         width: '100%', 
+				backgroundColor: '#f5f5f5ff'
     },
     backgroundImage: {
         flex: 0, 
@@ -106,11 +126,11 @@ const styles = StyleSheet.create({
 			width: '100%',
   	},
     textOverlay: {
-        color: 'black',
+        color: '#ffff',
         fontSize: 24,
         textAlign: 'left',
 				width: '100%',
-				paddingHorizontal: 50, 
+				paddingHorizontal: 20, 
 				color: 'black',
 				fontFamily: 'Poppins-Regular',
     },
@@ -149,12 +169,9 @@ const styles = StyleSheet.create({
 		dashbox:{
 			marginTop: 20,
 			padding:20,
-			backgroundColor: 'white',
+			backgroundColor:"white",
 			width: '100%',
-			borderTopLeftRadius: 30,
-			borderBottomRightRadius: 30,
-			borderTopRightRadius: 10,
-			borderBottomLeftRadius: 10,
+			borderRadius:30,
 			shadowColor: "#00000053",
 			shadowOffset: { width: 5, height: 5 },
 			shadowOpacity: 0.5,
@@ -169,10 +186,11 @@ const styles = StyleSheet.create({
 			color: 'maroon',
 			fontFamily: 'Poppins-Regular',
 			textAlign: 'right',
+			paddingHorizontal: 5,
 		},
 		dateContainer:{
 			alignSelf: 'flex-end',
-			backgroundColor: 'white',
+			backgroundColor: '#ffffff6e',
 			padding: 10,
 			borderRadius: 20,
 		},
